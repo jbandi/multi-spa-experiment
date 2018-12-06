@@ -115,7 +115,13 @@ module.exports = {
     // Point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
       path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
-    jsonpFunction: 'jsonpApp2'
+    jsonpFunction: 'jsonpApp2',
+
+  },
+  externals: {
+    // Use external version of React
+    "react": "React",
+    "react-dom": "ReactDOM"
   },
   optimization: {
     // Automatically split vendor and commons
